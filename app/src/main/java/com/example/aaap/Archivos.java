@@ -11,8 +11,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Archivos extends AppCompatActivity {
@@ -55,6 +57,28 @@ public class Archivos extends AppCompatActivity {
                 Toast.makeText(this, "No se pudo guardar el archivo", Toast.LENGTH_LONG).show();
             }
         }
+    }
+    public void Consultar (View view){
+        String nombre = et1.getText().toString();
+        if(rb1.isChecked() == true) {
+            try {
+                File tarjetaSD = Environment.getExternalStorageDirectory();
+                File rutaArchivo = new File(tarjetaSD.getPath(), nombre);
+                InputStreamReader abrirArchivo = new InputStreamReader(openFileInput(nombre));
+                BufferedReader leerArchivo = new BufferedReader(abrirArchivo);
+                String linea = leerArchivo.readLine();
+                String contenidoCompleto = "";
 
+                while (linea != null) {
+                    contenidoCompleto += linea + "\n";
+                    linea = leerArchivo.readLine();
+                }
+                leerArchivo.close();
+                abrirArchivo.close();
+                tv1.setText(contenidoCompleto);
+            } catch (IOException e) {
+                Toast.makeText(this, "No se ha encontrado el archivo", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
