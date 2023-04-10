@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">aaap</string>
+    <string name="boton1">Guardar</string>
+    <string name="boton4">Ir a guardar</string>
+    <string name="boton2">Consultar</string>
+    <string name="et1">Ingresa la tabla de multiplicar</string>
+    <string name="et2">Ingresa el nombre del archivo</string>
+    <string name="radb1">TarjetaSSD</string>
+    <string name="radb2">Memoria Interna</string>
+    <string name="boton3">Tabla</string>
 </resources>
