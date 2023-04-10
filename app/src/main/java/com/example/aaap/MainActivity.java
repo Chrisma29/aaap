@@ -18,10 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         et1_numero = (EditText)findViewById(R.id.et1_numero);
-        et2_nombre = (EditText)findViewById(R.id.et2_nombre);
         tv1 = (TextView)findViewById(R.id.tv1);
-        radb1 = (RadioButton)findViewById(R.id.radb1);
-        radb2 = (RadioButton)findViewById(R.id.radb2);
     }
 
     //metodo Tabla
